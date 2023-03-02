@@ -7,27 +7,27 @@
 
 <h3>چند مثال:</h3>
 <p>تصویر ۱ (ورودی): [ابعاد واقعی تصویر: ۳۰۷۲×۳۰۷۲]</p>
-<img src="./sample_images/74228_34292 (1).png" width="50%">
+<img src="./sample_images/74228_34292 (1).png" width="224">
 <p>تصویر ۱ (نرمال شده): [ابعاد واقعی تصویر: ۳۰۷۲×۳۰۷۲]</p>
-<img src="./sample_images/74228_34292.png" width="50%">
+<img src="./sample_images/74228_34292.png" width="224">
 
 <hr>
 
 <p>تصویر ۲ (ورودی): [ابعاد واقعی تصویر: ۱۰۲۴×۱۰۲۴]</p>
-<img src="./sample_images/85492_25076 (1).png" width="50%">
+<img src="./sample_images/85492_25076 (1).png" width="224">
 <p>تصویر ۲ (نرمال شده): [ابعاد واقعی تصویر: ۱۰۲۴×۱۰۲۴]</p>
-<img src="./sample_images/85492_25076.png" width="50%">
+<img src="./sample_images/85492_25076.png" width="224">
 
 <hr>
 
 <p>تصویر ۳ (ورودی): [ابعاد واقعی تصویر: ۳۰۷۲×۳۰۷۲]</p>
-<img src="./sample_images/86516_12788 (1).png" width="50%">
+<img src="./sample_images/86516_12788 (1).png" width="224">
 <p>تصویر ۳ (نرمال شده): [ابعاد واقعی تصویر: ۳۰۷۲×۳۰۷۲]</p>
-<img src="./sample_images/86516_12788.png" width="50%">
+<img src="./sample_images/86516_12788.png" width="224">
 
 <hr>
 
 <p>تصویر ۴ (ورودی): [ابعاد واقعی تصویر: ۱۰۲۴×۱۰۲۴]</p>
-<img src="./sample_images/88564_24052 (1).png" width="50%">
+<img src="./sample_images/88564_24052 (1).png" width="224">
 <p>تصویر ۴ (نرمال شده): [ابعاد واقعی تصویر: ۱۰۲۴×۱۰۲۴]</p>
-<img src="./sample_images/88564_24052.png" width="50%">
+<img src="./sample_images/88564_24052.png" width="224">
