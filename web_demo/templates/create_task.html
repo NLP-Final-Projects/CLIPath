@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Histopathology Analyzer</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom CSS for the form -->
+    <style>
+        body {
+            background-color: #f1f1f1;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            margin-top: 50px;
+        }
+
+        .form-container h2, h3 {
+        {#color: #007bff;#} text-align: center;
+            margin-bottom: 30px;
+        }
+
+
+        #imagePreview {
+            width: 100%;
+            height: 500px;
+            background-position: center center;
+            background: url(https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg);
+            background-color: #fff;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: inline-block;
+            box-shadow: 0px -3px 6px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            display: block;
+            border-radius: 0px;
+            box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.2);
+            margin-top: -5px;
+        }
+
+        .imgUp {
+            margin-bottom: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="form-container">
+        <div class="row mx-4 px-5">
+            <div class="col-4">
+                <img width="170px" src="{% static 'Sharif_logo.svg.png' %}" alt="Sharif logo">
+            </div>
+            <div class="col-8 pt-5">
+                <h2>Natural Language Processing LAB</h2>
+            </div>
+
+        </div>
+        <hr/>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h3>Submit a new task</h3>
+            {% if errors %}
+                <div class="row">
+                    <div class="col-12">
+                        {% for error in errors %}
+                            <div class="alert alert-danger" role="alert">
+                                <p>{{ f }}:{{ error }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            <div class="row">
+                <div class="col-6">
+                    <label for="formGroupExampleInput">Pathology image:</label>
+                    <div id="imagePreview"></div>
+                    <label class="btn btn-primary">
+                        Upload<input type="file" name="image" class="uploadFile img" value="Upload Photo"
+                                     style="width: 0px;height: 0px;overflow: hidden;">
+                    </label>
+
+                </div>
+                <div class="col-5">
+
+                    <label for="formGroupExampleInput">Query texts:</label>
+                    <div id="text-inputs">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="query-1" placeholder="Add your text">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="query-2" placeholder="Add your text">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="query-3" placeholder="Add your text">
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="col-1">
+                    <div class="row">
+                        <div class="col-12">
+                            <span id="add-input-btn" class="btn btn-success btn-lg">+</span>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <span id="remove-input-btn" class="btn btn-danger btn-lg">-</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-3" align="center">
+                    <button type="submit" class="btn btn-outline-warning">Start Analyze ...</button>
+                </div>
+                <div class="col-3">
+                    <a class="btn btn-outline-info" href="{% url "main_page" %}">Go to main page</a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- Custom JavaScript for the form -->
+<script>
+    $(document).ready(function () {
+        // Initialize input counter
+        var inputCount = 3;
+        // Add Input Button Click Event
+        $("#add-input-btn").click(function () {
+            // Increment input counter
+            inputCount++;
+
+            // Create new input element
+            var newItem = '<div class="form-group" ><input type="text" name="query-' + inputCount + '" class="form-control" id="formGroupExampleInput2" placeholder="Add your text"></div>'
+            var newInput = $(newItem);
+
+            // Append new input to container
+            $("#text-inputs").append(newInput);
+        });
+
+        // Remove Input Button Click Event
+        $("#remove-input-btn").click(function () {
+            if (inputCount > 3) {
+                // Decrement input counter
+                inputCount--;
+
+                // Remove last input from container
+                $("#text-inputs").children().last().remove();
+            }
+        });
+        $(function () {
+            $(document).on("change", ".uploadFile", function () {
+                var uploadFile = $(this);
+                var files = !!this.files ? this.files : [];
+                console.log(files)
+                if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+                if (/^image/.test(files[0].type)) { // only image file
+                    var reader = new FileReader(); // instance of the FileReader
+                    reader.readAsDataURL(files[0]); // read the local file
+                    reader.onloadend = function () { // set image data as background of div
+                        //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
+                        $('#imagePreview').css("background-image", "url(" + reader.result + ")");
+                    }
+                }
+
+            });
+        });
+    });
+
+</script>
+</body>
+</html>
