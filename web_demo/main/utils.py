@@ -100,7 +100,7 @@ def baseline_model():
     clip.vision_model = vision_encoder
 
     ##### load model
-    clip.load_state_dict(torch.load(os.path.join(BASE_PATH, 'static/pytorch_model.bin'), map_location=torch.device('cpu')))
+    clip.load_state_dict(torch.load(os.path.join(BASE_PATH, 'data/pytorch_model_baseline.bin'), map_location=torch.device('cpu')))
     clip.eval()
     return clip.to(DEVICE)
 
