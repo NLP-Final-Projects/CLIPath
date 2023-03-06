@@ -56,7 +56,7 @@ pdf
 <div>
 <br>
 <div style="width:image width px; font-size:80%; text-align:left;">
-<img src="../color-normalization/sample_images/figure1.png" width="500">
+<img src="../color-normalization/sample_images/figure1.png">
 <br>
 INVASIVE DUCTAL CARCINOMA, DUCTAL CARCINOMA IN SITU, MICROPAPILLARY AND SOLID TYPES WITH COMEDO NECROSIS. DUCTAL CARCINOMA IN SITU IS NEAR INFERIOR MARGIN
 </div>
