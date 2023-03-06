@@ -18,7 +18,14 @@ class Task(models.Model):
         (FINISHED, 'Finished'),
         (FAILED, 'Falied'),
     )
+    BASELINE = '1'
+    FINAL = '2'
+    BACKEND_CHOICES = (
+        (BASELINE, 'Baseline (CLIP)'),
+        (FINAL, 'Final (CLIPath)')
+    )
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, default=CREATED)
+    backend = models.CharField(max_length=1, default='1', choices=BACKEND_CHOICES)
     task_id = models.UUIDField(default=uuid.uuid4)
     create_date = models.DateField(auto_now_add=True)
     update_date = models.DateField(auto_now=True)

@@ -6,7 +6,10 @@ from .models import Task, Query
 class CreateTaskForem(forms.ModelForm):
     class Meta:
         model = Task
-        fields = ['image']
+        fields = ['image', 'backend']
+        widgets = {
+            'backend': forms.RadioSelect
+        }
 
     def is_valid(self):
         data = self.data

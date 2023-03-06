@@ -6,4 +6,7 @@ from .models import Task
 @shared_task()
 def schedule_task(task_id):
     task = Task.objects.get(task_id=task_id)
-    baseline_pipe(task)
+    if task.backend == Task.BASELINE:
+        baseline_pipe(task)
+    else:
+        pass
