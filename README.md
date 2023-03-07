@@ -1,6 +1,10 @@
 # CLIPath
 **CLIP for Whole Slide Image & Report**
 
+<b>مدل یادگیری ماشین کلیپ برای آموزش توام متن گزارش و تصویر WSI</b>
+
+<hr>
+
 <div style="direction:rtl;">
 
 <figure>
@@ -9,7 +13,6 @@
   </p>
   <p align="center">تصویر 1 - پایپلاین پردازشی</p>
 </figure>
-<br>
 <br>
 
 پایپلاین پردازشی زمان آزمایش به این صورت می‌باشد که دو پایپلاین موازی فعالیت می‌کنند که به ترتیب عبارت اند از پایپلاین پردازشی تصویر و پایپلاین پردازشی متن. (تصویر ۱)
@@ -26,5 +29,20 @@
   <p align="center">تصویر 2 - مدل کلیپ مورد استفاده</p>
 </figure>
 <br>
-<br>
 مدل کلیپ (تصویر ۲) استفاده شده نیز به این صورت است که تصاویر انتخاب شده در بخش پایپلاین پردازش تصویر را به عنوان ورودی در کنار متن انتخاب شده از گزارش می‌گیرد و در نهایت تصمیم می‌گیرد کدام متن به کدام تصویر نزدیک است. برای مدل زبانی از <a href="https://arxiv.org/pdf/2205.06885.pdf">pathology BERT</a> استفاده شده است که به صورت خاص روی گزارش‌های پاتولوژی آموزش دیده است و نتایج مناسبی را در این بخش ارائه کرده است.</div>
+
+<br>
+<hr>
+
+<div style="direction:rtl;">اعضای گروه:</div>
+<div style="direction:rtl;">محمدحسین موثقی‌نیا  <a href="https://github.com/MMovasaghi"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="moh.movasaghinia@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
+
+<div style="direction:rtl;">رضا عباسی  <a href="https://github.com/abbasiReza"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="reza.abbasi.uni@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
+
+<div style="direction:rtl;">حسین جعفری‌نیا  <a href="https://github.com/hussein-jafarinia"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="hussein.jafarinia@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
+
+<div style="direction:rtl;">حسن علیخانی  <a href="https://github.com/psk007"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="alikhani.hassan1997@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
+
+<div style="direction:rtl;">مهدی شادروی  <a href="https://github.com/MahdiShadrooy"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="mahdishadroy@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
+
+<div style="direction:rtl;">علی سلمانی  <a href="https://github.com/garamaleki"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="alisalmani200149@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
