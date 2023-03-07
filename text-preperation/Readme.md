@@ -1,3 +1,4 @@
+<h2 style="direction:rtl;">استخراج قسمت مهم گزارش</h2>
 <div style="direction:rtl;">
 ابتدا تمامی
 pdf
@@ -55,8 +56,11 @@ pdf
 </div>
 <div>
 <br>
+<h3>مثال:</h3>
+<p>برای مثال قسمتی از یکی از گزارش‌ها در تصویر زیر آورده شده است؛ قسمتی که هایلایت شده است، قسمتی است که متن نهایی از آن استخراج شده است و خلاصه شده است:</p>
 <div style="width:image width px; font-size:80%; text-align:left;">
 <img src="../color-normalization/sample_images/figure1.png">
 <br>
+<p>متن استخراج شده: (نتیجه جلسه حل تعارض‌ها)</p>
 INVASIVE DUCTAL CARCINOMA, DUCTAL CARCINOMA IN SITU, MICROPAPILLARY AND SOLID TYPES WITH COMEDO NECROSIS. DUCTAL CARCINOMA IN SITU IS NEAR INFERIOR MARGIN
 </div>
