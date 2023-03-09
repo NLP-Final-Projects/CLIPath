@@ -33,7 +33,7 @@
   <p align="center">
     <img src="documentation/baseline.png" style="display: block; margin-left: auto; margin-right: auto; width:۸0%">
   </p>
-  <p align="center">تصویر 3 - مدل ارائه شده</p>
+  <p align="center">تصویر 3 - مدل پایه</p>
 </figure>
 
 <br>
