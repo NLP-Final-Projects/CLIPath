@@ -10,7 +10,7 @@
 <figure>
   <p align="center">
     <img src="documentation/proposed_model.png" style="display: block; margin-left: auto; margin-right: auto; width:۸0%">
-  </p>
+  </p>ل
   <p align="center">تصویر 1 - مدل ارائه شده</p>
 </figure>
 
