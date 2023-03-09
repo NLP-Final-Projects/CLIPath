@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CLIPath {% block title %}{% endblock %}</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom CSS for the form -->
+    <style>
+        body {
+            background-color: #f1f1f1;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            margin-top: 50px;
+        }
+
+        .form-container h2, h3 {
+            {#color: #007bff;#}
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .title {
+            font-size: 150px;
+        }
+    </style>
+    {% block style %}{% endblock %}
+</head>
+<body>
+<div class="container">
+    <div class="form-container mb-5">
+        <div class="row mx-4 px-5">
+            <div class="col-4">
+                <img width="170px" src="{% static 'Sharif_logo.svg.png' %}" alt="Sharif logo">
+            </div>
+            <div class="col-8 pt-1">
+                <h1 class="title">CLIPath</h1>
+            </div>
+
+        </div>
+        <hr/>
+
+            {% block content %}{% endblock %}
+
+    </div>
+</div>
+
+{% block script %}{% endblock %}
+</body>
+</html>
