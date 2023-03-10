@@ -8,7 +8,7 @@ import torch
 from PIL import Image
 from torch import nn
 
-from transformers import BertConfig, BertModel, AutoTokenizer, CLIPFeatureExtractor
+from transformers import BertConfig, BertModel, AutoTokenizer, CLIPFeatureExtractor, AutoModel, AutoConfig
 from transformers import CLIPVisionConfig, CLIPModel, CLIPConfig, CLIPVisionModel
 
 from .models import Task
@@ -133,10 +133,12 @@ class Baseline(Pipeline):
 
 
 class Final(Pipeline):
+
     def model(self):
-        txt_configuration = BertConfig(num_hidden_layers=6, num_attention_heads=6)
-        # Initializing a model (with random weights) from the bert-base-uncased style configuration
-        text_encoder = BertModel(txt_configuration)
+        # txt_configuration = BertConfig(num_hidden_layers=6, num_attention_heads=6)
+        txt_configuration = AutoConfig.from_pretrained('tsantos/PathologyBERT')
+        text_encoder = AutoModel.from_config(txt_configuration)
+        text_encoder.pooler = BertPooler(text_encoder.config)
 
         vision_configuration = CLIPVisionConfig()
         vision_encoder = CLIPVisionModel(vision_configuration)
@@ -153,7 +155,7 @@ class Final(Pipeline):
 
     def predict(self, task, normalized_image):
         # load pretrained tokenizer
-        tokenizer = AutoTokenizer.from_pretrained('bert-base-uncased')
+        tokenizer = AutoTokenizer.from_pretrained('tsantos/PathologyBERT')
 
         # build and load model
         clip = self.model()
@@ -190,3 +192,17 @@ class Final(Pipeline):
             self.clear_gpu()
 
         return text_probs.cpu()
+
+
+class BertPooler(torch.nn.Module):
+    def __init__(self, config):
+        super().__init__()
+        self.dense = torch.nn.Linear(config.hidden_size, config.hidden_size)
+        self.activation = torch.nn.Tanh()
+
+    def forward(self, hidden_states):
+        # We take the hidden state corresponding to the first token
+        pooled_output = hidden_states[:, 0]
+        pooled_output = self.dense(pooled_output)
+        pooled_output = self.activation(pooled_output)
+        return pooled_output
