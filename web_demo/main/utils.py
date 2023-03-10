@@ -13,8 +13,8 @@ from transformers import CLIPVisionConfig, CLIPModel, CLIPConfig, CLIPVisionMode
 
 from .models import Task
 
-# DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-DEVICE = torch.device('cpu')
+DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+# DEVICE = torch.device('cpu')
 BASE_PATH = pathlib.Path(__file__).parent.resolve()
 TARGET_IMAGE_PATH = os.path.join(BASE_PATH, 'static/colorstandard_brca.png')
 
