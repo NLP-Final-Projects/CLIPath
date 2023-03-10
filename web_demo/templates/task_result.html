@@ -1,0 +1,146 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block style %}
+    <style>
+        .icon {
+            width: 16px;
+            height: 16px;
+            padding: 0;
+            margin: 0;
+            vertical-align: middle;
+        }
+
+    </style>
+{% endblock %}
+{% block content %}
+    {% if create %}
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">Task submitted successfully!</h4>
+                        <p>The analyzing process may take a few minutes to complete. Please copy <span class="badge badge-info">Task ID</span> from
+                            below
+                            for tracking your task.</p>
+                        <hr>
+                        <p class="mb-0">Task ID:
+                            <button type="button" class="btn btn-sm btn-default btn-copy js-tooltip js-copy" data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    data-copy="{{ task.task_id }}" title="Click for copy to clipboard">
+                                <code class="">{{ task.task_id }}</code>
+                                <!-- icon from google's material design library -->
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" version="1.1" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M17,9H7V7H17M17,13H7V11H17M14,17H7V15H14M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z"/>
+                                </svg>
+                            </button>
+                        </p>
+                        <a class="btn btn-outline-info" href="{% url "main_page" %}">Go to main page</a>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            {% if task.status == '1' or task.status == '2'%}
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-info" role="alert">
+                            <h4 class="alert-heading">Task is in process ....</h4>
+                            <p>Your task isn't complete yet. Please check this page in a few minutes later.</p>
+                            <a class="btn btn-outline-info" href="{% url "main_page" %}">Go to main page</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            {% if task.status == '3' or 1 %}
+                <div class="row justify-content-center">
+                    <div class="col-md-auto mx-auto pt-3 pb-3">
+                        <h4>Results for task: <code>{{ task.task_id }}</code></h4>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-auto mx-auto ">
+                        <p class="text text-warning">Backend: <span class="badge badge-warning">{{ task.get_backend_display }}</span></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-12">
+                        <h4>Original image</h4>
+                        <img src="/media/{{ task.image }}" class="img-thumbnail">
+                    </div>
+                    <div class="col-lg-8 col-sm-12">
+                        <h4>Text queries</h4>
+                        {% for query in task.sorted_queries %}
+                            <div class="row mb-4 pr-4">
+                                <div class="col-12">
+                                    <div class="text">{{ query.text }}</div>
+                                    <div class="progress">
+                                        <div class="progress-bar {% if forloop.counter0 == 0 %}bg-success{% else %}bg-warning{% endif %}"
+                                             role="progressbar" style="width: {% widthratio query.probability 1 100 %}%"
+                                             aria-valuenow="{{ query.probability }}" aria-valuemin="0"
+                                             aria-valuemax="1">{{ query.probability }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5"></div>
+                    <div class="col-3">
+                        <a class="btn btn-outline-info" href="{% url "create_task" %}">Submit a new task</a>
+                    </div>
+                    <div class="col-2">
+                        <a class="btn btn-outline-info" href="{% url "main_page" %}">Go to main page</a>
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+{% endblock %}
+{% block script %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+    <script>
+        function copyToClipboard(text, el) {
+        var copyTest = document.queryCommandSupported('copy');
+        var elOriginalText = el.attr('data-original-title');
+
+        if (copyTest === true) {
+            var copyTextArea = document.createElement("textarea");
+            copyTextArea.value = text;
+            document.body.appendChild(copyTextArea);
+            copyTextArea.select();
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'Copied!' : 'Whoops, not copied!';
+                el.attr('data-original-title', msg).tooltip('show');
+            } catch (err) {
+                console.log('Oops, unable to copy');
+            }
+            document.body.removeChild(copyTextArea);
+            el.attr('data-original-title', elOriginalText);
+        } else {
+            // Fallback if browser doesn't support .execCommand('copy')
+            window.prompt("Copy to clipboard: Ctrl+C or Command+C, Enter", text);
+        }
+    }
+
+    $(document).ready(function () {
+        // Initialize
+        // ---------------------------------------------------------------------
+
+        // Tooltips
+        // Requires Bootstrap 3 for functionality
+        $('.js-tooltip').tooltip();
+
+        // Copy to clipboard
+        // Grab any text in the attribute 'data-copy' and pass it to the
+        // copy function
+        $('.js-copy').click(function () {
+            var text = $(this).attr('data-copy');
+            var el = $(this);
+            copyToClipboard(text, el);
+        });
+    });
+
+    </script>
+{% endblock %}
