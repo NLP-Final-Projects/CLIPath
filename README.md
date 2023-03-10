@@ -5,7 +5,11 @@
 
 <hr>
 
-<p align="center"><a href="https://github.com/NLP-Final-Projects/CLIPath/blob/main/documentation/final_report.pdf">Final report</a></p>
+<div align="center">
+
+[![view - Documentation](https://img.shields.io/badge/view-Documentation-blue?style=for-the-badge)](https://github.com/NLP-Final-Projects/CLIPath/blob/main/documentation/final_report.pdf)
+
+</div>
 
 <div align="center">
 
