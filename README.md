@@ -5,6 +5,8 @@
 
 <hr>
 
+<p align="center"><a href="https://github.com/NLP-Final-Projects/CLIPath/blob/main/documentation/final_report.pdf">Final report</a></p>
+
 <div align="center">
 
 [![Site](https://img.shields.io/badge/View_site-Badge_Generator-2ea44f?style=for-the-badge)](https://clipath.refworld.site/)
