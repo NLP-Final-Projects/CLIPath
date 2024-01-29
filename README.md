@@ -64,15 +64,15 @@
 <br>
 <hr>
 
-<div style="direction:rtl;">اعضای گروه:</div>
-<div style="direction:rtl;">محمدحسین موثقی‌نیا  <a href="https://github.com/MMovasaghi"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="moh.movasaghinia@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
+<div style="direction:rtl;">اعضای گروه (Team members):</div>
+<div style="direction:rtl;">محمدحسین موثقی‌نیا (Mohammad Hosein Movasaghinia)  <a href="https://github.com/MMovasaghi"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="moh.movasaghinia@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
 
-<div style="direction:rtl;">رضا عباسی  <a href="https://github.com/abbasiReza"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="reza.abbasi.uni@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
+<div style="direction:rtl;">رضا عباسی (Reza Abbasi)  <a href="https://github.com/abbasiReza"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="reza.abbasi.uni@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
 
-<div style="direction:rtl;">حسین جعفری‌نیا  <a href="https://github.com/hussein-jafarinia"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="hussein.jafarinia@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
+<div style="direction:rtl;">حسین جعفری‌نیا (Hossein Jafarinia)  <a href="https://github.com/hussein-jafarinia"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="hussein.jafarinia@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
 
-<div style="direction:rtl;">حسن علیخانی  <a href="https://github.com/psk007"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="alikhani.hassan1997@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
+<div style="direction:rtl;">محمد‌حسن علیخانی (Mohammad Hassan Alikhani)  <a href="https://github.com/psk007"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="alikhani.hassan1997@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
 
-<div style="direction:rtl;">مهدی شادروی  <a href="https://github.com/MahdiShadrooy"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="mahdishadroy@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
+<div style="direction:rtl;">مهدی شادروی (Mahdi Shadrooy)  <a href="https://github.com/MahdiShadrooy"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="mahdishadroy@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
 
-<div style="direction:rtl;">علی سلمانی  <a href="https://github.com/garamaleki"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="alisalmani200149@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
+<div style="direction:rtl;">علی سلمانی (Ali Salmani)  <a href="https://github.com/garamaleki"><img src="documentation/github-logo.jpeg" width="15">  </a><a href="alisalmani200149@gmail.com"><img src="documentation/gmail-logo.webp" width="15"></a></div>
